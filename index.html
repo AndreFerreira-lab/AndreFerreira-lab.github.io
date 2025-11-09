@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDV Petshop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login-screen" class="screen active">
+    <h1>🐾 PDV Petshop</h1>
+    <input type="text" id="user" placeholder="Usuário">
+    <input type="password" id="pass" placeholder="Senha">
+    <button onclick="login()">Entrar</button>
+  </div>
+
+  <div id="main-screen" class="screen">
+    <header>
+      <h2>🐶 PDV Petshop</h2>
+      <nav>
+        <button onclick="showSection('clientes')">Clientes</button>
+        <button onclick="showSection('estoque')">Estoque</button>
+        <button onclick="showSection('vendas')">Vendas</button>
+        <button onclick="logout()">Sair</button>
+      </nav>
+    </header>
+
+    <section id="clientes" class="section active">
+      <h3>Cadastro de Clientes</h3>
+      <input type="text" id="nomeCliente" placeholder="Nome do Cliente">
+      <input type="text" id="telefoneCliente" placeholder="Telefone">
+      <button onclick="addCliente()">Adicionar Cliente</button>
+      <ul id="listaClientes"></ul>
+    </section>
+
+    <section id="estoque" class="section">
+      <h3>Controle de Estoque</h3>
+      <input type="text" id="nomeProduto" placeholder="Produto">
+      <input type="number" id="quantidadeProduto" placeholder="Quantidade">
+      <input type="number" id="precoProduto" placeholder="Preço (R$)">
+      <button onclick="addProduto()">Adicionar Produto</button>
+      <ul id="listaEstoque"></ul>
+    </section>
+
+    <section id="vendas" class="section">
+      <h3>Registrar Venda</h3>
+      <select id="clienteVenda"></select>
+      <select id="produtoVenda"></select>
+      <input type="number" id="qtdVenda" placeholder="Quantidade">
+      <button onclick="fazerVenda()">Finalizar Venda</button>
+      <ul id="listaVendas"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
